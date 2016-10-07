@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rogue Like Game</title>
+
+<script src="scripts/main.js"></script>
+<script src="scripts/talk.js"></script>
+<script src="scripts/draw.js"></script>
+<script src="scripts/move.js"></script>
+<script src="scripts/menu.js"></script>
+<script src="scripts/actor.js"></script>
+<script src="scripts/item.js"></script>
+<script src="scripts/data.js"></script>
+<script src="scripts/systemMenu.js"></script>
+
+<script src="assets/maps.js"></script>
+<script src="assets/actors.js"></script>
+<script src="assets/conversations.js"></script>
+<script src="assets/items.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<link rel="stylesheet" type="text/css" href="styles/subMenu.css">
+<link rel="stylesheet" type="text/css" href="styles/menu.css">
+
+</head>
+<body onLoad="testmap(), renderMap(), dataStart()">
+
+<div id="board">
+	<div id="mapContainer"></div>
+
+	<div id="curtainCon"></div>
+	<div id="menuCurtainCon"></div>
+
+	<div id="pcImg"></div>
+	<div id="targetMenu"></div>
+	<div id="subMenu">
+		<div id="batk"></div>
+		<div id="bdef"></div>
+		<div id="bodyCon"><div id="body"></div></div>
+
+
+		<div id="matk"></div>
+		<div id="mdef"></div>
+		<div id="mindCon"><div id="mind"></div></div>
+
+
+		<div id="satk"></div>
+		<div id="sdef"></div>
+		<div id="spiritCon"><div id="spirit"></div></div>
+
+		<div id="energyCon"><div id="energyL"></div><div id="energyR"></div></div>
+
+		<div id="selfButton" onClick="selfCall()">Self</div>
+		<div id="invButton" onClick="invCall()">Inventory</div>
+		<div id="systemButton" onClick="sysCall()">System</div>
+	</div>
+
+	<div id="output"></div>
+	<div id="speaker"></div>
+</div>
+</body>
+</html>
