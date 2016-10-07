@@ -17,10 +17,10 @@ function selfCall() {
 	//check for walk == true
 	if (pc.move == true) {
 		document.getElementById("menuCurtainCon").innerHTML = "<div id='curtain'></div>";
-/*		var div = document.createElement("div");
+		var div = document.createElement("div");
 		div.id = "menu";
-		document.getElementById("board").appendChild(div); */
-		document.getElementById("board").innerHTML += "<div id ='menu'></div>";
+		document.getElementById("board").appendChild(div);
+		//document.getElementById("board").innerHTML += "<div id ='menu'></div>";
 		document.getElementById("menu").innerHTML = menuContent;
 		document.getElementById('desc').innerHTML = "this is where the description goes."
 		pc.move = false;
