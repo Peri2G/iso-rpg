@@ -132,13 +132,10 @@ function tick() {
 	//clear target if threshold exceeded.
 	if (pc.target !== null) {
 		if (pc.x + pc.vision < map.actors[pc.target].x || pc.x - pc.vision > map.actors[pc.target].x) {
-			document.getElementById("targetMenu").innerHTML = "";
-			document.getElementById("speaker").innerHTML = "";
+			clearTarget()
 			pc.target = null;
 		} else if (pc.y + pc.vision < map.actors[pc.target].y || pc.y - pc.vision > map.actors[pc.target].y) {
-			document.getElementById("targetMenu").innerHTML = "";
-			document.getElementById("speaker").innerHTML = "";
-			pc.target = null;
+			clearTarget()
 		}
 	};
 	//execute perks
