@@ -49,3 +49,12 @@ function updateMap() {
 	document.getElementById("mapContainer").style.top = (pc.y*25 - 360)*-1 -50+"px";
 	document.getElementById("mapContainer").style.left = (pc.x*40 - (pc.y*25) - 600)*-1+50+"px";
 }
+
+function drawPC() {
+	// create a canvas group (since it's the first time we're getting it)
+	var canvasGroup = da.getCanvasGroup("pcImg", {
+	// provide some styling options; width and height are particularly important
+	width: 400,
+	height: 600,
+	});
+}

@@ -125,6 +125,20 @@ function start() {
 	dataStart();
 	renderMap();
 	pcUpdate();
+
+	da.load();
+	var canvasGroup = da.getCanvasGroup("pcImg", {
+	// provide some styling options; width and height are particularly important
+	width: 300,
+	height: 600,
+	});
+	da.showCanvasGroup("pcImg");
+
+	var fembias = 1.3;
+	var randomness = 0.8;
+	PC = da.createRandomCharacter(fembias, randomness);
+
+	var exports = da.draw(canvasGroup, PC);
 	//draw background
 	//draw items
 	//draw actors (pc first)
