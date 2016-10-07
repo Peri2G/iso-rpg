@@ -9,6 +9,7 @@ function sysCall() {
 		document.getElementById("board").innerHTML += "<div id='menu' style='overflow: scroll;'></div>";
 		pc.move = false;
 	};
+	//update the save files
 	//add system menu content
 	document.getElementById("menu").innerHTML = menuContent;
 	dataScreen = document.getElementById("dataScreen");
@@ -23,7 +24,8 @@ function sysCall() {
 		loadID = "load" + i;
 		dataID = "data" + i;
 		index = i;
-		dataScreen.innerHTML += "<div id='"+saveID+"' class='saveButton' style='top: "+top+"px'>Save</div>  <div id='"+dataID+"'  class='dataButton'  style='top: "+top+"px'>File "+ i + "//"+ pc.name+  "//" + "Save Date and Time"+ "</div>  <div id='"+loadID+"' class='loadButton'  style='top: "+top+"px'>Load</div>"
+		function saveName(){if (saveArray[i].pc) {return saveArray[i].pc.name + " / " + saveArray[i].date} else {return ""}};
+		dataScreen.innerHTML += "<div id='"+saveID+"' class='saveButton' style='top: "+top+"px'>Save</div>  <div id='"+dataID+"'  class='dataButton'  style='top: "+top+"px'>   "+ saveName() + "</div>  <div id='"+loadID+"' class='loadButton'  style='top: "+top+"px'>Load</div>"
 
 		console.log(index);
 	};
