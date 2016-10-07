@@ -18,7 +18,10 @@ function invCall() {
 	//check for walk to confirm pc is not occupied with somethign else
 	if (pc.move == true) {
 		document.getElementById("menuCurtainCon").innerHTML = "<div id='curtain'></div>";
-		document.getElementById("board").innerHTML += "<div id='menu'></div>";
+		var div = document.createElement("div");
+		div.id = "menu";
+		document.getElementById("board").appendChild(div);
+		//document.getElementById("board").innerHTML += "<div id='menu'></div>";
 		document.getElementById("menu").innerHTML = menuContent;
 		pc.move = false;
 
@@ -114,17 +117,6 @@ function invListings(filter) {
 	};
 	document.getElementById("listings").innerHTML = listings;
 }
-
-function menuClose() {
-	var el = document.getElementById("menu");
-	if (el !== null) {
-		document.getElementById("menuCurtainCon").innerHTML = "";
-		el.parentNode.removeChild(el);
-		pc.move = true;
-	};
-	document.getElementById("output").innerHTML = "";
-};
-
 
 function listingClick(i){
 	var target = i;

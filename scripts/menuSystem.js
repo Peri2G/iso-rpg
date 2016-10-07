@@ -6,7 +6,10 @@ function sysCall() {
 	//check for walk == true
 	if (pc.move == true) {
 		document.getElementById("menuCurtainCon").innerHTML = "<div id='curtain'></div>";
-		document.getElementById("board").innerHTML += "<div id='menu' style='overflow: scroll;'></div>";
+		var div = document.createElement("div");
+		div.id = "menu";
+		document.getElementById("board").appendChild(div);
+		//document.getElementById("board").innerHTML += "<div id='menu' style='overflow: scroll;'></div>";
 		pc.move = false;
 	};
 	//update the save files
