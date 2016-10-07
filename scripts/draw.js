@@ -1,25 +1,8 @@
-//pc variable
-var portrait = "<!-- lower --><br><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div> <br>";
-
-portrait += "<!-- middle --><br><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div> <br>";
-
-portrait += "<!-- torso --><br><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div> <br>";
-
-portrait += "<!-- head --><br><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div> <br>";
-
-portrait += "<!-- equipped --><br><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div><div id=''></div>";
-
-
 //clear map function
 function clearMap() {
 	for (i = 0; i <=100; i++) {
 		map.tiles[i] = [];
 	}
-};
-
-//map drawing function
-function drawMap(x) {
-	document.getElementById("mapContainer").innerHTML = x
 };
 
 //map render function
@@ -41,7 +24,7 @@ function renderMap(target) {
 	//draw pc
 	ink += "<div id='pcSprite' style='top: "+ (pc.y*25 -32)+"px; left: "+ (pc.x*40 - (pc.y*25)-6) +"px; background-image: "+ pc.sprite.body +"'></div>"
 	//draw ink to Map
-	drawMap(ink);
+	document.getElementById("mapContainer").innerHTML = ink;
 	//move the map Container to pc being center perspective
 	document.getElementById("mapContainer").style.top = (pc.y*25 - 360)*-1 -50+"px";
 	document.getElementById("mapContainer").style.left = (pc.x*40 - (pc.y*25) - 600)*-1+50+"px";
@@ -58,12 +41,6 @@ function updateMap() {
 	};
 	// clear map load buffer
 	map.load = [];
-	//update each actor
-	for (i =0; i < map.actors.length; i++) {
-		//need to add switch(map.actors[i].act) so I can use a string to signal which function to use.
-		var act = i
-		ai(act);
-	};
 	//update pc placement
 	document.getElementById("pcSprite").style.top = (pc.y*25 -32)+"px";
 	document.getElementById("pcSprite").style.left = (pc.x*40 - (pc.y*25)-6)+"px";
@@ -72,16 +49,3 @@ function updateMap() {
 	document.getElementById("mapContainer").style.top = (pc.y*25 - 360)*-1 -50+"px";
 	document.getElementById("mapContainer").style.left = (pc.x*40 - (pc.y*25) - 600)*-1+50+"px";
 }
-
-
-function drawPc() {
-	document.getElementById("pcImg").InnerHTML = portrait;
-};
-
-function ai(index) {
-	var act = map.actors[index].ai;
-	switch(act) {
-		case "wander": wander(index);
-		break;
-	}
-};

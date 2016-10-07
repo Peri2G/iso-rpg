@@ -29,7 +29,7 @@ function consume(name, desc, value, img) {
 	this.desc = desc;
 	this.value = value;
 	this.img = img;
-	//will have to create custom methods for these. 
+	//will have to create custom methods for these.
 	this.use = function(){console.log("success")};
 };
 
@@ -40,7 +40,7 @@ function book(name, type, desc, value, img) {
 	this.desc = desc;
 	this.value = value;
 	this.img = img;
-	//will have to create custom methods for these. 
+	//will have to create custom methods for these.
 	this.read = function(){console.log("success")};
 };
 

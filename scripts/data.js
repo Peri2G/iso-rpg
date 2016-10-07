@@ -1,6 +1,6 @@
 //declare the variable
 var saveArray = [];
-var saveString = ""
+var saveString = "";
 var saveTime;
 function dataManage() {
 	saveString = JSON.stringify(saveArray);

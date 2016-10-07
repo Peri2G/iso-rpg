@@ -120,13 +120,30 @@ var pc = {
 };
 
 function start() {
+	testmap();
+	renderMap();
+	dataStart();
+	renderMap();
+	pcUpdate();
 	//draw background
 	//draw items
 	//draw actors (pc first)
 	//draw menus
 };
 
+//function to trigger all the ai. May move it to actor
+function ai() {
+	for (i =0; i < map.actors.length; i++) {
+		var act = map.actors[i].ai;
+		switch(act) {
+			case "wander": wander(i);
+			break;
+		}
+	};
+};
+
 function tick() {
+	ai();
 	//update map
 	updateMap();
 	//clear target if threshold exceeded.
